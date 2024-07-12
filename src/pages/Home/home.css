@@ -1,6 +1,16 @@
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
 .lista-filmes {
-    max-width: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px; /* Espaçamento entre os itens */
+    width: 100%;
     margin: 14px auto;
+    max-width: 800px; /* Ajuste o valor conforme necessário */
 }
 
 .loading {
@@ -25,9 +35,9 @@
 }
 
 .lista-filmes img {
-    width: 900px;
+    width: 100%;
     max-width: 100%;
-    max-height: 340px;
+    max-height: 200px;
     object-fit: cover;
     display: block;
     border-top-left-radius: 8px;
@@ -35,14 +45,14 @@
 }
 
 .lista-filmes a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 0;
-  font-size: 24px;
-  background-color: #116feb;
-  text-decoration: none;
-  color: #fff;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    font-size: 24px;
+    background-color: #116feb;
+    text-decoration: none;
+    color: #fff;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
