@@ -10,6 +10,12 @@ function Favoritos() {
     setFilmes(JSON.parse(minhaLista) || []);
   });
 
+  function excluirFilme(id) { 
+    const filmesFiltrados = filmes.filter((item) => item.id!== id);
+    setFilmes(filmesFiltrados);
+    localStorage.setItem("@primeflix", JSON.stringify(filmesFiltrados));
+  }
+
   return (
     <div className="meus-filmes">
       <h1>Meus Filmes</h1>
@@ -22,12 +28,12 @@ function Favoritos() {
                 src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}
                 alt={item.title}
               />
-              <span>{item.title}</span>
+              <span className="title">{item.title}</span>
               <div>
                 <Link to={`/filme/${item.id}`}>
                   <button>Ver Detalhes</button>
                 </Link>
-                <button onClick={() => removerFilme(item.id)}>Remover</button>
+                <button onClick={() => excluirFilme(item.id)}>Remover</button>
               </div>
             </li>
           );
